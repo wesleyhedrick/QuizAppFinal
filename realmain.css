@@ -1,0 +1,107 @@
+* {
+    
+    color: white;
+    font-family: 'Metamorphous', sans-serif;
+  }
+
+  body {
+    background-color: black;
+    background-size: 100vw 100vh;
+    height: 100vh;
+    padding-top: 100px;
+  }
+  
+  header {
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  header h1 {
+      font-size: 30px;
+      margin-bottom: 5px;
+  }
+  
+  header h2 {
+      margin-top: 5px;
+      font-size: 30px;
+  }
+
+  .andthe {
+      margin: 0px;
+      font-size: 10px;
+  }
+  .quiz {
+      font-size: 30px;
+  }
+  main {
+    text-align: center;
+  }
+  
+  .results {
+      margin-top: 150px;
+  }
+  button {
+    height: 50px;
+    width: 250px;
+    margin-top: 50px;
+    font-size: 18px;
+    background-color: green;
+    border: 2px solid white;
+  }
+
+  form button {
+    height: 50px;
+    width: 250px;
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: green;
+    border: 2px solid white;
+  }
+  
+  .inputcontainer {
+    display: block;
+    height: 50px;
+    width: 300px;
+    outline: 2px solid white;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    text-align: left;
+    padding-left: 15px;
+  }
+  
+  .inputcontainer input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #ffffff;
+      transition: .2s all linear;
+      outline: none;
+      margin-right: 5px;
+      position: relative;
+      top: 2px;
+  }
+  
+  input:checked {
+      border: 8px solid red;
+  }
+  
+  @media screen and (min-width: 800px) {
+    
+    
+
+    .container {
+      border: 2px solid white;
+      width: 800px;
+      height: 800px;
+      margin: auto; 
+      
+      box-sizing: border-box;
+    }
+    
+  
+  
+  }
