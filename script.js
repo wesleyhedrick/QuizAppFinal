@@ -28,20 +28,20 @@ function renderQuestionPage(event){
             </label>
           
             <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
-              <span>${QUESTIONBANK[questionNum].answer1}</span>
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer2}" required>
+              <span>${QUESTIONBANK[questionNum].answer2}</span>
             </label>
           
           
             <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
-              <span>${QUESTIONBANK[questionNum].answer1}</span>
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer3}" required>
+              <span>${QUESTIONBANK[questionNum].answer3}</span>
             </label>
           
 
             <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
-              <span>${QUESTIONBANK[questionNum].answer1}</span>
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer4}" required>
+              <span>${QUESTIONBANK[questionNum].answer4}</span>
             </label>
 
           <button type="submit">Submit</button>
