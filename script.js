@@ -21,18 +21,29 @@ function renderQuestionPage(event){
 
       <form>
           <p>${QUESTIONBANK[questionNum].question}</p>
-          <div class="inputcontainer">
-            <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>${QUESTIONBANK[questionNum].answer1}</input>
-          </div>
-          <div class="inputcontainer">
-            <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer2}" required>${QUESTIONBANK[questionNum].answer2}</input>
-          </div>
-          <div class="inputcontainer">
-            <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer3}" required>${QUESTIONBANK[questionNum].answer3}</input>
-          </div>
-          <div class="inputcontainer">
-            <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer4}" required>${QUESTIONBANK[questionNum].answer4}</input>
-          </div>
+          
+            <label class="inputcontainer">
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
+              <span>${QUESTIONBANK[questionNum].answer1}</span>
+            </label>
+          
+            <label class="inputcontainer">
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
+              <span>${QUESTIONBANK[questionNum].answer1}</span>
+            </label>
+          
+          
+            <label class="inputcontainer">
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
+              <span>${QUESTIONBANK[questionNum].answer1}</span>
+            </label>
+          
+
+            <label class="inputcontainer">
+              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
+              <span>${QUESTIONBANK[questionNum].answer1}</span>
+            </label>
+
           <button type="submit">Submit</button>
       </form>`);
       $('form').on('submit', function(){
