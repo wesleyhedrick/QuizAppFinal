@@ -1,23 +1,34 @@
 * {
-    
     color: white;
     font-family: 'Metamorphous', sans-serif;
   }
 
   body {
     background-color: black;
-    background-size: 100vw 100vh;
     height: 100vh;
+    width: 100vw;
     padding-top: 100px;
+    
   }
   
-  header {
+  fieldset {
+    border: none;
+  }
+  .questionBody {
+    padding-top: 20px;
+  }
+  .landingPageHeader {
     text-align: center;
     padding-top: 50px;
   }
   
+  .questionPageHeader {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  
   header h1 {
-      font-size: 30px;
+      font-size: 2em;
       margin-bottom: 5px;
   }
   
@@ -40,6 +51,7 @@
   .results {
       margin-top: 150px;
   }
+
   button {
     height: 50px;
     width: 250px;
@@ -61,7 +73,7 @@
   .inputcontainer {
     display: block;
     height: 50px;
-    width: 300px;
+    width: 90%;
     outline: 2px solid white;
     margin: auto;
     margin-bottom: 10px;
@@ -94,7 +106,7 @@
     
 
     .container {
-      border: 2px solid white;
+      
       width: 800px;
       height: 800px;
       margin: auto; 
@@ -102,6 +114,37 @@
       box-sizing: border-box;
     }
     
+    header {
+      margin-top: 50px;
+    }
   
   
   }
+
+  @media screen and (max-height: 568px) {
+    
+    body {
+      height: 100vh;
+    }
+    .landingPageHeader {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .questionmargin {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    header p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    
+    main p {
+      display: inline-block;
+      
+    }
+
+
+  }
+
+  

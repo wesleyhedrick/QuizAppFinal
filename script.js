@@ -13,7 +13,9 @@ function renderLanding(){
 
 
 function renderQuestionPage(event){
-    
+    $('body').toggleClass('questionBody')
+    $('header').toggleClass('questionPageHeader');
+    $('header h1, header h2, header p').toggleClass('questionmargin');
     $('main').html(
       `
       <p>Question ${questionNum+1}/10</p>
@@ -21,35 +23,38 @@ function renderQuestionPage(event){
 
       <form>
           <p>${QUESTIONBANK[questionNum].question}</p>
-          
-            <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
-              <span>${QUESTIONBANK[questionNum].answer1}</span>
-            </label>
-          
-            <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer2}" required>
-              <span>${QUESTIONBANK[questionNum].answer2}</span>
-            </label>
-          
-          
-            <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer3}" required>
-              <span>${QUESTIONBANK[questionNum].answer3}</span>
-            </label>
-          
+            <fieldset>
+              <label class="inputcontainer">
+                <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer1}" required>
+                <span>${QUESTIONBANK[questionNum].answer1}</span>
+              </label>
+            
+              <label class="inputcontainer">
+                <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer2}" required>
+                <span>${QUESTIONBANK[questionNum].answer2}</span>
+              </label>
+            
+            
+              <label class="inputcontainer">
+                <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer3}" required>
+                <span>${QUESTIONBANK[questionNum].answer3}</span>
+              </label>
+            
 
-            <label class="inputcontainer">
-              <input id="a1" type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer4}" required>
-              <span>${QUESTIONBANK[questionNum].answer4}</span>
-            </label>
+              <label class="inputcontainer">
+                <input type="radio" name="answer" value="${QUESTIONBANK[questionNum].answer4}" required>
+                <span>${QUESTIONBANK[questionNum].answer4}</span>
+              </label>
 
-          <button type="submit">Submit</button>
+              <button type="submit">Submit</button>
+          <fieldset>
       </form>`);
       $('form').on('submit', function(event){
         event.preventDefault();
         if(questionNum+1<QUESTIONBANK.length){
           renderResultsPage();
+        } else if (questionNum+1==QUESTIONBANK.length){
+          renderFinalResultsPage();
         } else {
           renderFinalPage(); 
         } ;
@@ -65,6 +70,7 @@ function tallyScore(){
 function incrementQuestion(){
   questionNum++
 };
+
 
 function renderResultsPage(){
   console.log(`rendering Results Page`)
@@ -98,14 +104,56 @@ function renderResultsPage(){
             `);
     incrementQuestion();
   }
-  
-
-  
 
   $('button').click(function(){
     renderQuestionPage();
-  });
+  })
+
 }
+
+function renderFinalResultsPage(){
+  console.log(`rendering Results Page`)
+  console.log($('input:checked').val())
+  console.log(questionNum);
+
+  $('header').remove();
+  $('main').addClass('results');
+  const userAnswer = $('input:checked'); 
+  if(userAnswer.val() === QUESTIONBANK[questionNum].correctAnswer){
+    tallyScore();
+    
+    $('main').html(
+            `<p>You are correct!</p>
+            <p>${QUESTIONBANK[questionNum].correctAnswer}</p>
+            <br>
+            <p>${QUESTIONBANK[questionNum].feedback}</p>
+            <br>
+            <p>You\'re score is ${score * 100}</p>
+            <button>Finish</button>
+            `);
+    
+
+  } else {
+    
+    $('main').html(
+            `<p>Ruh Roh!</p>
+            <p>The correct answer is: "${QUESTIONBANK[questionNum].correctAnswer}"</p>
+            <p>You\'re score is ${score} out of ${questionNum+1}</p>
+            <button>Finish</button>
+            `);
+  }
+
+  $('button').click(function(){
+    renderFinalPage();
+  });
+
+}
+
+
+$('button').click(function(){
+  renderFinalPage();
+});
+
 
 function renderFinalPage(){
   $('main').html(
@@ -114,7 +162,6 @@ function renderFinalPage(){
             <p>Now...</p>
             <p class="quote">RUN</p>
             <p class="quote"> AWAYEEEEEE!</p>`);
-};
+}
 
 $(renderLanding);
-
