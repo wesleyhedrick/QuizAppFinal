@@ -18,10 +18,11 @@ function renderQuestionPage(event){
     $('header h1, header h2, header p').toggleClass('questionmargin');
     $('main').html(
       `
-      <p>Question ${questionNum+1}/10</p>
-      <p>Score: ${score * 100}</p>
+      
 
       <form>
+        <p>Question ${questionNum+1}/10</p>
+        <p>Score: ${score * 100}</p>
           <p>${QUESTIONBANK[questionNum].question}</p>
             <fieldset>
               <label class="inputcontainer">
