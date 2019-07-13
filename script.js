@@ -46,7 +46,8 @@ function renderQuestionPage(event){
 
           <button type="submit">Submit</button>
       </form>`);
-      $('form').on('submit', function(){
+      $('form').on('submit', function(event){
+        event.preventDefault();
         if(questionNum+1<QUESTIONBANK.length){
           renderResultsPage();
         } else {
