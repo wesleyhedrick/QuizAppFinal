@@ -3,12 +3,23 @@ let score = 0;
 
 
 function renderLanding(){
+  
+  $('header').html(`
+          <h1>Monty Python</h1>
+          <p class="andthe">and the</p>
+          <h2>Holy Grail</h2>
+          <p class="quiz">The Quiz</p>`
+  );
+
+  $('header').addClass('landingPageHeader');
+
   $('main').html(
     `<p>10  Questions</p>
     <button>Start</button>`);
     $('button').click(function(){
       renderQuestionPage();
     })
+  $('main').removeClass();
 }
 
 
@@ -78,7 +89,7 @@ function renderResultsPage(){
   console.log($('input:checked').val())
   console.log(questionNum);
 
-  $('header').remove();
+  $('header').html('');
   $('main').addClass('results');
   const userAnswer = $('input:checked'); 
   if(userAnswer.val() === QUESTIONBANK[questionNum].correctAnswer){
@@ -117,7 +128,7 @@ function renderFinalResultsPage(){
   console.log($('input:checked').val())
   console.log(questionNum);
 
-  $('header').remove();
+  $('header').html('');
   $('main').addClass('results');
   const userAnswer = $('input:checked'); 
   if(userAnswer.val() === QUESTIONBANK[questionNum].correctAnswer){
@@ -152,11 +163,6 @@ function renderFinalResultsPage(){
 }
 
 
-$('button').click(function(){
-  renderFinalPage();
-});
-
-
 function renderFinalPage(){
   $('main').html(
             `<p>All done!</p>
@@ -165,7 +171,9 @@ function renderFinalPage(){
             <button>Start Again</button>`); 
 
   $('button').click(function(){
-      location.reload();
+    questionNum = 0;
+    score = 0;
+    renderLanding();
   });
 }
 
