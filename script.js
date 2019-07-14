@@ -131,6 +131,7 @@ function renderFinalResultsPage(){
             <br>
             <p>You\'re score is ${score * 100}</p>
             <button>Finish</button>
+
             `);
     
 
@@ -161,8 +162,11 @@ function renderFinalPage(){
             `<p>All done!</p>
             <p>You scored ${score} out of 10</p>
             <p>Now...</p>
-            <p class="quote">RUN</p>
-            <p class="quote"> AWAYEEEEEE!</p>`);
+            <button>Start Again</button>`); 
+
+  $('button').click(function(){
+      location.reload();
+  });
 }
 
 $(renderLanding);
