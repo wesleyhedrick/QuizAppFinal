@@ -13,6 +13,7 @@
   
   fieldset {
     border: none;
+    padding: none;
   }
   .questionBody {
     padding-top: 20px;
@@ -112,8 +113,6 @@
   
   @media screen and (min-width: 800px) {
     
-    
-
     .container {
       
       width: 800px;
