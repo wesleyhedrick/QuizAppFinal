@@ -1,7 +1,6 @@
 let questionNum = 0;
 let score = 0;
 
-
 function renderLanding(){
   
   $('header').html(`
@@ -22,15 +21,21 @@ function renderLanding(){
   $('main').removeClass();
 }
 
-
 function renderQuestionPage(event){
-    $('body').toggleClass('questionBody')
-    $('header').toggleClass('questionPageHeader');
+    
+    $('body').attr('class', 'questionBody'); 
+    /*$('header').toggleClass('questionPageHeader');
+    $('header').attr('class', 'questionPageHeader');*/
+    $('header').html(`
+          <h1>Monty Python</h1>
+          <p class="andthe">and the</p>
+          <h2>Holy Grail</h2>
+          <p class="quiz">The Quiz</p>`
+    );
     $('header h1, header h2, header p').toggleClass('questionmargin');
+    $('main').removeClass('results');
     $('main').html(
       `
-      
-
       <form>
         <p>Question ${questionNum+1}/10</p>
         <p>Score: ${score * 100}</p>
